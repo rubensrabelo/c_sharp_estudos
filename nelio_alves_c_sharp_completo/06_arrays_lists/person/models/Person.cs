@@ -3,7 +3,7 @@ namespace Exercise {
         public string Name { get; set; }
         public double Height { get; set; }
 
-        public Person(string name, string height) {
+        public Person(string name, double height) {
             Name = name;
             Height = height;
         }
