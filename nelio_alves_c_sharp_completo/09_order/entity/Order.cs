@@ -9,7 +9,7 @@ namespace Exercise.Entity {
 
         public Client Client { get; set; }
 
-        public List<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public List<OrderItem> Items { get; private set; } = new List<OrderItem>();
 
         public Order(OrderStatus status, Client client) {
             Moment = DateTime.Now;
@@ -37,13 +37,14 @@ namespace Exercise.Entity {
 
         public override string ToString() {
             StringBuilder output = new StringBuilder();
-            output.Append($"Order moment: {Moment.ToString()}");
-            output.Append($"Order status: {Status}");
-            output.Append(Client);
+            output.Append("ORDER SUMMARY:\n");
+            output.Append($"Order moment: {Moment.ToString()}\n");
+            output.Append($"Order status: {Status}\n");
+            output.Append($"{Client}\n");
 
-            output.Append("Order items:");
+            output.Append("Order items:\n");
             foreach(OrderItem item in Items) {
-                output.Append(item);
+                output.Append($"{item}\n");
             }
 
             output.Append($"Total price {Total().ToString("F2", CultureInfo.InvariantCulture)}");

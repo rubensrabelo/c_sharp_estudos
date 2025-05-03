@@ -11,7 +11,7 @@ namespace Exercise.Entity {
         }
 
         public override string ToString() {
-            return $"Client: {Name} ({BirthDate}) - {Email}";
+            return $"Client: {Name} ({BirthDate.ToString("dd/MM/yyyy")}) - {Email}";
         }
     }
 }
